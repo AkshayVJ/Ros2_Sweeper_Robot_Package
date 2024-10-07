@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<robot name="sweeper_robot_description_package" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="base_color" value="Gazebo/Grey" />
+<xacro:property name="waste_box_color" value="Gazebo/Red" />
+<xacro:property name="right_wheel_color" value="Gazebo/Black" />
+<xacro:property name="left_wheel_color" value="Gazebo/Black" />
+<xacro:property name="castor_wheel_color" value="Gazebo/White" />
+<xacro:property name="sensor_mount_color" value="Gazebo/White" />
+<xacro:property name="lidar_sensor_color" value="Gazebo/Black" />
+<xacro:property name="camera_sensor_color" value="Gazebo/Black" />
+<xacro:property name="gps_sensor_color" value="Gazebo/Grey" />
+<xacro:property name="imu_sensor_color" value="Gazebo/Grey" />
+
+<!--  ##########  BODY COLOR  ##########  -->
+
+<gazebo reference="base_link">
+  <material>${base_color}</material>
+</gazebo>
+
+<gazebo reference="waste_box_link">
+  <material>${waste_box_color}</material>
+</gazebo>
+
+<!--  ##########  WHEEL COLOR  ##########  -->
+
+<gazebo reference="right_wheel_link">
+  <material>${right_wheel_color}</material>
+</gazebo>
+
+<gazebo reference="left_wheel_link">
+  <material>${left_wheel_color}</material>
+</gazebo>
+
+<!--  ##########  CASTER COLOR  ##########  -->
+
+<gazebo reference="castor_wheel_link">
+  <material>${castor_wheel_color}</material>
+</gazebo>
+
+<!--  ##########  Sensor Mount ##########  -->
+
+<gazebo reference="sensor_mount_link">
+  <material>${sensor_mount_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_sensor_link">
+  <material>${lidar_sensor_color}</material>
+</gazebo>
+
+<gazebo reference="camera_sensor_link">
+  <material>${camera_sensor_color}</material>
+</gazebo>
+
+<gazebo reference="gps_sensor_link">
+  <material>${gps_sensor_color}</material>
+</gazebo>
+
+<gazebo reference="imu_sensor_link">
+  <material>${imu_sensor_color}</material>
+</gazebo> 
+
+</robot>
