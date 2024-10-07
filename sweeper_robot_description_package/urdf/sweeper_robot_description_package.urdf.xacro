@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="sweeper_robot_description_package" xmlns:xacro="http:/www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sweeper_robot_gazebo_package)/config/sweeper_robot_materials.gazebo" />
+	<xacro:include filename="$(find sweeper_robot_gazebo_package)/config/sweeper_robot_physics.gazebo" />
+	<!--<xacro:include filename="$(find sweeper_robot_gazebo_package)/config/sweeper_robot_plugins.gazebo" />-->
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.086172 -1.9871E-10 0.093022"
+        rpy="0 0 0" />
+      <mass
+        value="27.698" />
+      <inertia
+        ixx="1.0708"
+        ixy="3.4417E-10"
+        ixz="0.076631"
+        iyy="0.74624"
+        iyz="6.0482E-10"
+        izz="1.5811" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 -0.012515 -2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="2.0986" />
+      <inertia
+        ixx="0.011156"
+        ixy="1.763E-20"
+        ixz="-2.2622E-20"
+        iyy="0.02185"
+        iyz="3.2087E-20"
+        izz="0.011156" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.10575 0.33 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 0.012515 5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="2.0986" />
+      <inertia
+        ixx="0.011156"
+        ixy="-6.7547E-20"
+        ixz="-2.1429E-18"
+        iyy="0.02185"
+        iyz="-1.826E-20"
+        izz="0.011156" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.10575 -0.33 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="castor_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 -3.4694E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.06545" />
+      <inertia
+        ixx="1.6362E-05"
+        ixy="0"
+        ixz="0"
+        iyy="1.6362E-05"
+        iyz="0"
+        izz="1.6362E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/castor_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/castor_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="castor_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.42277 0 -0.075"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="waste_box_link">
+    <inertial>
+      <origin
+        xyz="-0.033526 -1.927E-08 -0.09164"
+        rpy="0 0 0" />
+      <mass
+        value="44.279" />
+      <inertia
+        ixx="1.0977"
+        ixy="1.2689E-07"
+        ixz="0.095945"
+        iyy="0.85203"
+        iyz="9.0013E-09"
+        izz="1.5979" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/waste_box_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/waste_box_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waste_box_joint"
+    type="fixed">
+    <origin
+      xyz="0.18015 0 0.19441"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="waste_box_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="sensor_mount_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/sensor_mount_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/sensor_mount_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sensor_mount_joint"
+    type="fixed">
+    <origin
+      xyz="-0.047234 0 0.34357"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="sensor_mount_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_sensor_link">
+    <inertial>
+      <origin
+        xyz="0.011229 -8.7093E-19 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.02837" />
+      <inertia
+        ixx="5.8074E-06"
+        ixy="-6.2118E-22"
+        ixz="-4.6995E-22"
+        iyy="4.8668E-06"
+        iyz="6.3668E-22"
+        izz="4.8668E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/camera_sensor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/camera_sensor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_sensor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.005 0 -0.023571"
+      rpy="0 0 0" />
+    <parent
+      link="sensor_mount_link" />
+    <child
+      link="camera_sensor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar_sensor_link">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 -1.2055E-18 0.014036"
+        rpy="0 0 0" />
+      <mass
+        value="0.035635" />
+      <inertia
+        ixx="6.9081E-06"
+        ixy="2.0325E-22"
+        ixz="4.4771E-22"
+        iyy="6.9081E-06"
+        iyz="3.6061E-22"
+        izz="7.5752E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/lidar_sensor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/lidar_sensor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_sensor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.025 0 0.066429"
+      rpy="0 0 0" />
+    <parent
+      link="sensor_mount_link" />
+    <child
+      link="lidar_sensor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu_sensor_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.0099464"
+        rpy="0 0 0" />
+      <mass
+        value="0.023934" />
+      <inertia
+        ixx="3.9708E-06"
+        ixy="9.5046E-22"
+        ixz="1.1698E-21"
+        iyy="3.9708E-06"
+        iyz="2.2101E-21"
+        izz="4.792E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/imu_sensor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/imu_sensor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_sensor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.025 0.24 0.066429"
+      rpy="0 0 0" />
+    <parent
+      link="sensor_mount_link" />
+    <child
+      link="imu_sensor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="gps_sensor_link">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 0.010148082817463"
+        rpy="0 0 0" />
+      <mass
+        value="0.0266028752058656" />
+      <inertia
+        ixx="4.10483456553734E-06"
+        ixy="6.98855788273099E-22"
+        ixz="4.49576785173826E-22"
+        iyy="4.10483456553734E-06"
+        iyz="-4.41428267117635E-22"
+        izz="5.30044699923857E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/gps_sensor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sweeper_robot_description_package/meshes/gps_sensor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gps_sensor_joint"
+    type="fixed">
+    <origin
+      xyz="-0.025 -0.24 0.066429"
+      rpy="0 0 0" />
+    <parent
+      link="sensor_mount_link" />
+    <child
+      link="gps_sensor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+
+</robot>

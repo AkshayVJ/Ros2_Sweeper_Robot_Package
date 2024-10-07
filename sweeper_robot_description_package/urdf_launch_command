@@ -1,0 +1,4 @@
+sudo apt-get install ros-humble-urdf-tutorial
+
+ros2 launch urdf_tutorial display.launch.py model:=/home/akshay/ros2_ws/src/sweeper_robot_description_package/urdf/sweeper_robot_description_package.urdf.xacro
+
